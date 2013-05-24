@@ -1,0 +1,27 @@
+//
+// Prefix header for all source files of the 'MemoBook' target in the 'MemoBook' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#ifdef DEBUG
+#  define DebugLog(...) NSLog(__VA_ARGS__);
+#  define LOG_CURRENT_METHOD NSLog(@"%@/%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+#else
+#  define DebugLog(...) ;
+#  define LOG_CURRENT_METHOD ;
+#endif
+
+// フォント
+#define BASE_FONT(asize)        [UIFont fontWithName:@"Helvetica-Bold" size:asize]  // 標準スタイル
+#define BASE_BOLDFONT(size)     [UIFont boldSystemFontOfSize:size]                  // 太字スタイル
+#define BASE_ITALICFONT(size)   [UIFont italicSystemFontOfSize:size]                // 斜体スタイル
